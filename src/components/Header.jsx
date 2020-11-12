@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   state = {};
   render() {
     return (
       <nav className="header">
-        <h1>
+        <Link to="/" className="logo">
           <span style={{ color: "#EBF38F" }}>egg</span>board
-        </h1>
-        <button>+ New Project</button>
+        </Link>
+        <Link to="/newpost">
+          <button className="new-project-button">+ New Project</button>
+        </Link>
       </nav>
     );
   }
