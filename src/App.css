@@ -42,3 +42,97 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 6px 22px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
+
+
+/* Post.css */
+.post-grid-container {
+  display: grid;
+  font-size: small;
+  border-radius: 25px;
+  grid-template-columns: [c1] 1fr [c2] 4fr [c3] 1fr;
+  grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4] 1fr [r5];
+  grid-gap: 10px;
+  background-color: skyblue;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 10px;
+  align-items: stretch;
+}
+
+.post-grid-container > div {
+  border-radius: 25px;
+  background-color: beige;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.post-photo {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-title {
+  grid-row: 1;
+  grid-column: 2;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-manager-contact {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.post-tags {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.post-tags > div {
+  background-color: #b0e2f1;
+  height: 30%;
+  width: 100%;
+  border-radius: 25px;
+  margin: 10px;
+  top: 50%;
+  flex: 0;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.post-description {
+  grid-row: 3;
+  grid-column: 1 / span 3;
+}
+
+.post-needs {
+  grid-row: 4;
+  grid-column: 1 / span 3;
+}
+
+.attribute {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.egg {
+  display: block;
+  width: 60%;
+  height: 70%;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background-color: white;
+}
