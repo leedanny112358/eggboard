@@ -43,7 +43,6 @@ body {
   cursor: pointer;
 }
 
-
 /* Post.css */
 .post-grid-container {
   display: grid;
@@ -52,7 +51,7 @@ body {
   grid-template-columns: [c1] 1fr [c2] 4fr [c3] 1fr;
   grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4] 1fr [r5];
   grid-gap: 10px;
-  background-color: skyblue;
+  background-color: white;
   margin-top: 10px;
   margin-bottom: 0px;
   margin-left: 200px;
@@ -108,7 +107,7 @@ body {
   border-radius: 25px;
   margin: 10px;
   top: 50%;
-  flex: 0;  
+  flex: 0;
   justify-content: center;
   align-items: center;
   text-align: center;

@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import Post from "./components/Post.jsx";
 import NewPost from "./components/NewPost.jsx";
+import Filter from "./components/Filter.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -25,6 +26,20 @@ function App() {
           </Route>
           <Route path="/">
             {/* <div className="PostContainer"> { testposts.map((post) => <Post title={post.title} manager={post.manager} contact={post.contact} description={post.description} needs={post.needs} tags={post.tags} />) } </div> */}
+            <button
+              onClick={() => {
+                let x = document.getElementById("filters");
+                console.log(x);
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }}
+            >
+              filters
+            </button>
+            <Filter />
             <Post />
           </Route>
         </Switch>
