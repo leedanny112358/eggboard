@@ -135,3 +135,43 @@ body {
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   background-color: white;
 }
+
+/* NewPost.css */
+.centered-form {
+  display: block;
+  text-align: center;
+  background-color: aliceblue;
+  border-radius: 25px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 10px;
+}
+
+form > div {
+  margin: 10px;
+  padding: 10px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
+}
+
+.submit-button {
+  border-radius: 50px;
+  background-color: #ebf38f;
+  color: #7eb6c7;
+  border: none;
+  font-size: x-large;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.submit-button:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 6px 22px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  outline: none;
+}
