@@ -133,6 +133,23 @@ body {
   grid-column: 1 / span 3;
 }
 
+
+.post-votes {
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.post-voteArrow {
+  color: black;
+  background-color: #b0e2f1;
+  border: none;
+}
+
+.post-voteNum {
+  align-items: center;
+}
+
 .attribute {
   margin-bottom: 0px;
   font-weight: bold;

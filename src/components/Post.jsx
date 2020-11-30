@@ -6,7 +6,6 @@ PLEASE ONLY MODIFY THIS COMPONENT IN BRANCH POSTS
 
 class Post extends Component {
   /*
-  state = {};
   render() {
     return (
       // PLEASE ADD CODE TO IMPLEMENT POSTS LAYOUT IN DIV POST //
@@ -24,11 +23,13 @@ class Post extends Component {
       description: props.description || "No description provided",
       needs: props.needs || "No needs provided",
       tags: props.tags || ["tag1", "tag2", "tag3"],
+      upvote: props.upvote || 0,
     };
   }
 
   render() {
     return (
+      <div>
       <div className="post-grid-container">
         <div className="post-photo">
           <div className="egg"></div>
@@ -57,6 +58,24 @@ class Post extends Component {
           <p className="attribute">Needs:</p>
           <p>{this.state.needs}</p>
         </div>
+        <div className="post-votes">
+              <button className="post-voteArrow" 
+              onClick={() => this.setState({
+                  upvote: this.state.upvote + 1, 
+              })}>
+              ^
+              </button>
+              <div className="post-voteNum">
+                {this.state.upvote}
+              </div>
+              <button className="post-voteArrow" 
+              onClick={() => this.setState({
+                  upvote: this.state.upvote - 1, 
+              })}>
+              v
+              </button>
+      </div>
+      </div>
       </div>
     );
   }
