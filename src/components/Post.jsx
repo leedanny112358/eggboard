@@ -31,7 +31,6 @@ class Post extends Component {
 
   render() {
     return (
-      <div>
         <div className="post-grid-container">
           <div className="post-photo">
             <div className="egg"></div>
@@ -85,7 +84,6 @@ class Post extends Component {
           </div>
           <h2>{this.state.time}</h2>
         </div>
-      </div>
     );
   }
 }
