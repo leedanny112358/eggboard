@@ -25,8 +25,7 @@ function App() {
                   x.style.display = "block";
                 }
               }}
-            >
-              filters
+            > Filters
             </button>
             <Filter />
             <Results />

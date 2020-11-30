@@ -29,7 +29,6 @@ class Post extends Component {
 
   render() {
     return (
-      <div>
         <div className="post-grid-container">
           <div className="post-photo">
             <div className="egg"></div>
@@ -82,7 +81,6 @@ class Post extends Component {
             </button>
           </div>
         </div>
-      </div>
     );
   }
 }

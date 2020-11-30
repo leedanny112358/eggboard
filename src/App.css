@@ -126,11 +126,13 @@ body {
 .post-description {
   grid-row: 3;
   grid-column: 1 / span 3;
+  overflow-wrap: break-word;
 }
 
 .post-needs {
   grid-row: 4;
   grid-column: 1 / span 3;
+  overflow-wrap: break-word;
 }
 
 
@@ -138,16 +140,21 @@ body {
   align-items: center;
   margin: 0 auto;
   width: 90%;
+  background-color: #b0e2f1;
+  grid-column: 2;
 }
 
 .post-voteArrow {
   color: black;
-  background-color: #b0e2f1;
+  background-color: beige;
   border: none;
+  display: inline-block;
 }
 
 .post-voteNum {
   align-items: center;
+  display: inline-block;
+  font-weight: bold;
 }
 
 .attribute {
@@ -201,4 +208,33 @@ input {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 6px 22px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
   outline: none;
+}
+
+/* Filter.css */
+
+.filter-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.filter-grid-item-lang {
+  background-color: thistle;
+  border: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.filter-grid-item-spec {
+  background-color: #E3E3FF;
+  border: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.filter-grid-item-cat {
+  background-color: #E2FCE6;
+  border: black;
+  text-align: center;
+  padding: 20px;
 }
