@@ -5,7 +5,7 @@ class NewPost extends Component {
     super(props);
     this.state = {
       title: "",
-      name: "",
+      manager: "",
       contact: "",
       description: "",
       needs: "",
@@ -15,10 +15,10 @@ class NewPost extends Component {
   }
 
   async handleSubmit(event) {
-    const { title, name, contact, description, needs } = this.state;
+    const { title, manager, contact, description, needs } = this.state;
     if (
       title === "" ||
-      name === "" ||
+      manager === "" ||
       contact === "" ||
       description === "" ||
       needs === ""
@@ -74,7 +74,7 @@ class NewPost extends Component {
             <label>Project Manager Name</label>
             <br />
             <input
-              name="name"
+              name="manager"
               placeholder="Name"
               onChange={this.handleChange}
             />
