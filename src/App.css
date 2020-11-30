@@ -214,27 +214,57 @@ input {
 
 .filter-grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   padding: 10px;
+  grid-gap: 5px;
 }
 
 .filter-grid-item-lang {
-  background-color: thistle;
-  border: black;
+  background-color: #FFDBDB;
+  border: 1px solid black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.filter-grid-item-lang:focus {
+  background-color: #f5a6a6;
+}
+
+.filter-grid-item-lang:visited {
+  background-color: #f5a6a6;
 }
 
 .filter-grid-item-spec {
   background-color: #E3E3FF;
-  border: black;
+  border: 1px solid black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.filter-grid-item-spec:focus {
+  background-color: #b2b2f0;
 }
 
 .filter-grid-item-cat {
   background-color: #E2FCE6;
-  border: black;
+  border: 1px solid black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.filter-grid-item-cat:focus {
+  background-color: #a3f0af;
+}
+
+.filter-go {
+  text-align: center;
+  font-size: 16px;
+  grid-column: 3;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #ebf38f;
 }
