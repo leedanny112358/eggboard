@@ -9,6 +9,7 @@ class NewPost extends Component {
       contact: "",
       description: "",
       needs: "",
+      time: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,28 +28,25 @@ class NewPost extends Component {
       return;
     }
     event.preventDefault();
-    try {
-      await fetch("http://localhost:5000/newpost", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(this.state),
-      });
-      console.log("request was sent!");
-    } catch (error) {
-      console.error("Error:", error);
-    }
-    /* 
-    alert(` 
-      ____New Post Details____\n 
-      Title : ${title} 
-      Name : ${name} 
-      Contact : ${contact} 
-      Description : ${description} 
-      Needs : ${needs} 
-    `); */
-    return;
+    let d = new Date();
+    let datetime = d.toUTCString();
+    console.log(datetime);
+    this.setState({ time: datetime }, () => {
+      console.log(this.state.time);
+      try {
+        fetch("http://localhost:5000/newpost", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        });
+        window.location.href = "http://localhost:3000/";
+        alert("Your project was submitted");
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    });
   }
 
   handleChange(event) {

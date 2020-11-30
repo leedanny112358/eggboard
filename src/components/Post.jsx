@@ -23,6 +23,8 @@ class Post extends Component {
       description: props.description || "No description provided",
       needs: props.needs || "No needs provided",
       tags: props.tags || ["tag1", "tag2", "tag3"],
+      time: props.time || "no time",
+      id: props.id || "no id",
       upvote: props.upvote || 0,
     };
   }
@@ -81,6 +83,7 @@ class Post extends Component {
               v
             </button>
           </div>
+          <h2>{this.state.time}</h2>
         </div>
       </div>
     );

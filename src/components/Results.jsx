@@ -16,6 +16,8 @@ class Results extends Component {
             description={post.description}
             needs={post.needs}
             tags={post.tags}
+            time={post.time}
+            id={post.id}
           />
         ))}
       </div>

@@ -1,5 +1,4 @@
 import Header from "./components/Header.jsx";
-import Post from "./components/Post.jsx";
 import NewPost from "./components/NewPost.jsx";
 import Filter from "./components/Filter.jsx";
 import Results from "./components/Results.jsx";
@@ -38,5 +37,3 @@ function App() {
 }
 
 export default App;
-
-
