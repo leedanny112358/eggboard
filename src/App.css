@@ -227,7 +227,18 @@ input {
 
 .tags_dropdowns_container{
   display: flex;
-  background-color: crimson;
+}
+
+.tags_dropdowns_item {
+  flex-grow: 1;
+}
+
+.tags_dropdown {
+  width:150px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
 }
 
 .submit-button {

@@ -10,19 +10,25 @@ class NewPost extends Component {
       description: "",
       needs: "",
       time: "",
+      tag1: "---",
+      tag2: "---",
+      tag3: "---",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async handleSubmit(event) {
-    const { title, manager, contact, description, needs } = this.state;
+    const { title, manager, contact, description, needs, tag1, tag2, tag3 } = this.state;
     if (
       title === "" ||
       manager === "" ||
       contact === "" ||
       description === "" ||
-      needs === ""
+      needs === "" ||
+      tag1 === "---" ||
+      tag2 === "---" ||
+      tag3 === "---"  
     ) {
       alert("Please enter all fields!");
       return;
@@ -104,6 +110,46 @@ class NewPost extends Component {
               value={this.state.phoneNo}
               onChange={this.handleChange}
             />
+          </div>
+          <div className="tags_dropdowns_container">
+              <span className="tags_dropdowns_item">
+                Languages&nbsp;
+                <select className="tags_dropdown" name="tag1" value={this.state.tag1} onChange={this.handleChange}>
+                    <option value="---">---</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="C/C++">C/C++</option>
+                    <option value="HTML/CSS/JavaScript">HTML/CSS/JavaScript</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Swift">Swift</option>
+                    <option value="Objective C">Objective C</option>
+                    <option value="C#">C#</option>
+                </select> 
+              </span>
+              <span className="tags_dropdowns_item">
+                Specification&nbsp;
+                <select className="tags_dropdown" name="tag2" value={this.state.tag2} onChange={this.handleChange}>
+                    <option value="---">---</option>
+                    <option value="Back-End">Back-End</option>
+                    <option value="Front-End">Front-End</option>
+                    <option value="Web Dev">Web Dev</option>
+                    <option value="Mobile/iOS">Mobile/iOS</option>
+                    <option value="Low-Level">Low-Level</option>
+                    <option value="Software Tools">Software Tools</option>
+                    <option value="Security">Security</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                </select>  
+              </span>
+              <span className="tags_dropdowns_item">
+                Category&nbsp;
+                <select className="tags_dropdown" name="tag3" value={this.state.tag3} onChange={this.handleChange}>
+                    <option value="---">---</option>
+                    <option value="Just for fun">Just for fun</option>
+                    <option value="For class">For class</option>
+                    <option value="Start-up">Start-up</option>
+                    <option value="Open-source">Open-source</option>
+                </select>
+              </span>
           </div>
           <div>
             <button className="submit-button">Submit Post</button>
