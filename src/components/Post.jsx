@@ -29,10 +29,19 @@ class Post extends Component {
     };
   }
 
+  randomColor() {
+    let colors = ['#00ecff', '#ff0000', '#ff00e7', '#8900ff', '#0078ff', '#ff9a00',
+                  '#17deee', '#ff7f50', '#00ff11', '#ff4162', '#f2e50b', '#21b20c',
+                  '#0181bb', '#77dad5', '#ffe877', '#dede0e', '#f96e91', '#232d3b',
+                  '#ff005c', '#00b1b9', '#ffa800', '#ffd32a', '#0ce881', '#48d0fa',
+                  '#3d40c6', '#ff3f34'];                  
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
   render() {
     return (
         <div className="post-grid-container">
-          <div className="post-photo">
+          <div className="post-photo" style={{backgroundColor: this.randomColor()}}>
             <div className="egg"></div>
           </div>
           <div className="post-title">
