@@ -13,6 +13,7 @@ class NewPost extends Component {
       tag1: "---",
       tag2: "---",
       tag3: "---",
+      color: "#b0e2f1" // default color; should never be this color
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,6 +54,16 @@ class NewPost extends Component {
         console.error("Error:", error);
       }
     });
+    this.setState({color: this.randomColor()});
+  }
+
+  randomColor() {
+    let colors = ['#00ecff', '#ff0000', '#ff00e7', '#8900ff', '#0078ff', '#ff9a00',
+                  '#17deee', '#ff7f50', '#00ff11', '#ff4162', '#f2e50b', '#21b20c',
+                  '#0181bb', '#77dad5', '#ffe877', '#dede0e', '#f96e91', '#232d3b',
+                  '#ff005c', '#00b1b9', '#ffa800', '#ffd32a', '#0ce881', '#48d0fa',
+                  '#3d40c6', '#ff3f34'];                  
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 
   handleChange(event) {
@@ -64,6 +75,8 @@ class NewPost extends Component {
   render() {
     return (
       <div className="centered-form">
+        <h1>New Project Post</h1>
+        <p><b>Instructions:</b> Please fill out all of the following fields to create a new project post. In particular, please select 1 of each tag.</p>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label>Project Title</label>

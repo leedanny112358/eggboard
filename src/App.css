@@ -135,16 +135,34 @@ body {
   overflow-wrap: break-word;
 }
 
+#post-bottom {
+  display: flex;
+  align-items: stretch; 
+  grid-column: 1 / span 3;
+  background-color: white;
+}
 
 .post-votes {
-  align-items: center;
-  margin: 0 auto;
-  width: 90%;
-  background-color: #b0e2f1;
-  grid-column: 2;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+  background-color: beige;
+  border-radius: 25px;
+  margin-right: 5px;
+}
+
+.post-time {
+  background-color: beige;
+  border-radius: 25px;
+  padding: 10px;
+  flex-grow: 1;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
 }
 
 .vote-arrow-up {

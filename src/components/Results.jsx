@@ -5,6 +5,7 @@ class Results extends Component {
   state = {
     posts: [],
   };
+
   render() {
     return (
       <div className="PostContainer">
@@ -18,6 +19,7 @@ class Results extends Component {
             tags={post.tags}
             time={post.time}
             id={post.id}
+            color={post.color}
           />
         ))}
       </div>
