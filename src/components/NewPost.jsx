@@ -69,6 +69,7 @@ class NewPost extends Component {
             <label>Project Title</label>
             <br />
             <input
+              className="form_input"
               name="title"
               placeholder="Title"
               onChange={this.handleChange}
@@ -78,6 +79,7 @@ class NewPost extends Component {
             <label>Project Manager Name</label>
             <br />
             <input
+              className="form_input"
               name="manager"
               placeholder="Name"
               onChange={this.handleChange}
@@ -87,6 +89,7 @@ class NewPost extends Component {
             <label>Project Manager Contact</label>
             <br />
             <input
+              className="form_input"
               name="contact"
               placeholder="Contact"
               onChange={this.handleChange}
@@ -95,7 +98,9 @@ class NewPost extends Component {
           <div>
             <label>Project Description</label>
             <br />
-            <input
+            <textarea
+              className="form_input"
+              rows="5"
               name="description"
               placeholder="Description"
               onChange={this.handleChange}
@@ -104,7 +109,9 @@ class NewPost extends Component {
           <div>
             <label>Project Needs</label>
             <br />
-            <input
+            <textarea 
+              className="form_input"
+              rows="5"
               name="needs"
               placeholder="Needs"
               value={this.state.phoneNo}

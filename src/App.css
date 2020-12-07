@@ -213,16 +213,18 @@ body {
 }
 
 form > div {
-  margin: 10px;
+  margin: 10px; 
   padding: 10px;
 }
 
-input {
+.form_input {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 25px;
   outline: none;
+  resize: none;
+  margin: 0px;
 }
 
 .tags_dropdowns_container{
