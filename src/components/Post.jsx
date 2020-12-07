@@ -60,27 +60,23 @@ class Post extends Component {
             <p>{this.state.needs}</p>
           </div>
           <div className="post-votes">
-            <button
-              className="post-voteArrow"
+            <div
+              className="vote-arrow-up"
               onClick={() =>
                 this.setState({
                   upvote: this.state.upvote + 1,
                 })
               }
-            >
-              ^
-            </button>
+            />
             <div className="post-voteNum">{this.state.upvote}</div>
-            <button
-              className="post-voteArrow"
+            <div
+              className="vote-arrow-down"
               onClick={() =>
                 this.setState({
                   upvote: this.state.upvote - 1,
                 })
               }
-            >
-              v
-            </button>
+            />
           </div>
           <h2>{this.state.time}</h2>
         </div>
