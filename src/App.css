@@ -275,6 +275,17 @@ form > div {
   margin: 0px;
 }
 
+.form_pass_input {
+  width: 10%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
+  resize: none;
+  margin: 0px;
+  text-align: center;
+}
+
 .tags_dropdowns_container{
   display: flex;
 }

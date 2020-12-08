@@ -13,6 +13,7 @@ class NewPost extends Component {
       tag1: "---",
       tag2: "---",
       tag3: "---",
+      passcode: "",
       color: "#b0e2f1" // default color; should never be this color
     };
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +21,7 @@ class NewPost extends Component {
   }
 
   async handleSubmit(event) {
-    const { title, manager, contact, description, needs, tag1, tag2, tag3 } = this.state;
+    const { title, manager, contact, description, needs, tag1, tag2, tag3, passcode } = this.state;
     if (
       title === "" ||
       manager === "" ||
@@ -29,7 +30,8 @@ class NewPost extends Component {
       needs === "" ||
       tag1 === "---" ||
       tag2 === "---" ||
-      tag3 === "---"  
+      tag3 === "---"  ||
+      passcode === ""
     ) {
       alert("Please enter all fields!");
       return;
@@ -150,8 +152,8 @@ class NewPost extends Component {
                 Specification&nbsp;
                 <select className="tags_dropdown" name="tag2" value={this.state.tag2} onChange={this.handleChange}>
                     <option value="---">---</option>
-                    <option value="Back-End">Backend</option>
-                    <option value="Front-End">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Frontend">Frontend</option>
                     <option value="Web Dev">Web Dev</option>
                     <option value="Mobile/iOS">Mobile/iOS</option>
                     <option value="Low-Level">Low-Level</option>
@@ -170,6 +172,16 @@ class NewPost extends Component {
                     <option value="Open-source">Open-source</option>
                 </select>
               </span>
+          </div>
+          <div>
+            <label>Four-digit passcode to allow for post deletion and/or editing</label>
+            <br />
+            <input
+              className="form_pass_input"
+              name="passcode"
+              placeholder="1234"
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <button className="submit-button">Submit Post</button>
