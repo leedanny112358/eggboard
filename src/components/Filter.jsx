@@ -23,6 +23,7 @@ class Filter extends Component {
   render() {
     return(
       <div id="filters"> 
+        <div className="filter-label">Languages</div>
         <div className="filter-grid-container">
           <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Java", e)}>Java</button>
           <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Python", e)}>Python</button>
@@ -32,6 +33,9 @@ class Filter extends Component {
           <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Swift", e)}>Swift</button>
           <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Objective C", e)}>Objective C</button>
           <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("C#", e)}>C#</button>
+        </div>
+        <div className="filter-label">Specification</div>
+        <div className="filter-grid-container">
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Backend", e)}>Backend</button>
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Frontend", e)}>Frontend</button>
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Web Dev", e)}>Web Dev</button>
@@ -40,13 +44,18 @@ class Filter extends Component {
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Software Tools", e)}>Software Tools</button>
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Security", e)}>Security</button>
           <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Cloud Computing", e)}>Cloud Computing</button>
+        </div>
+        <div className="filter-label">Category</div>
+        <div className="filter-grid-container">
           <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Just for fun", e)}>Just for fun</button>
           <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("For class", e)}>For class</button>
           <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Start-up", e)}>Start-up</button>
           <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Open source", e)}>Open source</button>
+        </div>
+        <div className="filter-selected">{this.state.selected}</div>
+        <div className="filter-grid-container-2">
           <button className="filter-go"> Go </button>
         </div>
-        <p>{this.state.selected}</p>
       </div>
       );
   }

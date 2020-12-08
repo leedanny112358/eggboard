@@ -150,8 +150,8 @@ class NewPost extends Component {
                 Specification&nbsp;
                 <select className="tags_dropdown" name="tag2" value={this.state.tag2} onChange={this.handleChange}>
                     <option value="---">---</option>
-                    <option value="Back-End">Back-End</option>
-                    <option value="Front-End">Front-End</option>
+                    <option value="Back-End">Backend</option>
+                    <option value="Front-End">Frontend</option>
                     <option value="Web Dev">Web Dev</option>
                     <option value="Mobile/iOS">Mobile/iOS</option>
                     <option value="Low-Level">Low-Level</option>

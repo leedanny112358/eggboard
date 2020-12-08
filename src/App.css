@@ -30,7 +30,7 @@ body {
 #filters {
   display: none;
   width: 70%;
-  height: 300px;
+  height: 475px;
   margin: 0 auto;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -311,7 +311,14 @@ form > div {
 
 .filter-grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-gap: 5px;
+}
+
+.filter-grid-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 10px;
   grid-gap: 5px;
 }
@@ -322,6 +329,7 @@ form > div {
   text-align: center;
   padding: 10px;
   border-radius: 12px;
+  color: black;
 }
 
 .filter-grid-item-lang:focus {
@@ -338,6 +346,7 @@ form > div {
   text-align: center;
   padding: 10px;
   border-radius: 12px;
+  color: black;
 }
 
 .filter-grid-item-spec:focus {
@@ -350,13 +359,14 @@ form > div {
   text-align: center;
   padding: 10px;
   border-radius: 12px;
+  color: black;
 }
 
 .filter-grid-item-cat:focus {
   background-color: #a3f0af;
 }
 
-.filter.selected {
+.filter-selected {
   padding: 10px;
   text-align: center;
 }
@@ -368,6 +378,10 @@ form > div {
   padding: 10px;
   border-radius: 12px;
   background-color: #ebf38f;
-  grid-column: 3;
-  grid-row: 5;
+  grid-column: 2;
+  color: #578c9b;
+}
+.filter-label {
+  text-align: center;
+  font-weight: bold;
 }
