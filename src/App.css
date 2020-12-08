@@ -356,12 +356,18 @@ form > div {
   background-color: #a3f0af;
 }
 
+.filter.selected {
+  padding: 10px;
+  text-align: center;
+}
+
 .filter-go {
   text-align: center;
   font-size: 16px;
-  grid-column: 3;
   font-weight: bold;
   padding: 10px;
   border-radius: 12px;
   background-color: #ebf38f;
+  grid-column: 3;
+  grid-row: 5;
 }

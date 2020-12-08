@@ -1,33 +1,52 @@
 import React, { Component } from "react";
 
 class Filter extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: Array(),
+    };
+  }
+  handleClick(tag) {
+    var current = this.state.selected;
+    let index = current.indexOf(tag + ', ');
+    if (index === -1) {
+      current.push(tag + ', ');
+    } else {
+      current.splice(index, 1);
+    }
+    this.setState({
+      selected: current,
+    });
+  }
+
   render() {
     return(
       <div id="filters"> 
         <div className="filter-grid-container">
-          <button className="filter-grid-item-lang">Java</button>
-          <button className="filter-grid-item-lang">Python</button>
-          <button className="filter-grid-item-lang">C/C++</button>
-          <button className="filter-grid-item-lang">HTML/CSS/JavaScript</button>
-          <button className="filter-grid-item-lang">SQL</button>
-          <button className="filter-grid-item-lang">Swift</button>
-          <button className="filter-grid-item-lang">Objective C</button>
-          <button className="filter-grid-item-lang">C#</button>
-          <button className="filter-grid-item-spec">Back-End</button>
-          <button className="filter-grid-item-spec">Front-End</button>
-          <button className="filter-grid-item-spec">Web Dev</button>
-          <button className="filter-grid-item-spec">Mobile/iOS</button>
-          <button className="filter-grid-item-spec">Low-Level</button>
-          <button className="filter-grid-item-spec">Software Tools</button>
-          <button className="filter-grid-item-spec">Security</button>
-          <button className="filter-grid-item-spec">Cloud Computing</button>
-          <button className="filter-grid-item-cat">Just for fun</button>
-          <button className="filter-grid-item-cat">For class</button>
-          <button className="filter-grid-item-cat">Start-up</button>
-          <button className="filter-grid-item-cat">Open source</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Java", e)}>Java</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Python", e)}>Python</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("C/C++", e)}>C/C++</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("HTML/CSS/JavaScript", e)}>HTML/CSS/JavaScript</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("SQL", e)}>SQL</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Swift", e)}>Swift</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("Objective C", e)}>Objective C</button>
+          <button className="filter-grid-item-lang" onClick={(e) => this.handleClick("C#", e)}>C#</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Backend", e)}>Backend</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Frontend", e)}>Frontend</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Web Dev", e)}>Web Dev</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Mobile/iOS", e)}>Mobile/iOS</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Low-Level", e)}>Low-Level</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Software Tools", e)}>Software Tools</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Security", e)}>Security</button>
+          <button className="filter-grid-item-spec" onClick={(e) => this.handleClick("Cloud Computing", e)}>Cloud Computing</button>
+          <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Just for fun", e)}>Just for fun</button>
+          <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("For class", e)}>For class</button>
+          <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Start-up", e)}>Start-up</button>
+          <button className="filter-grid-item-cat" onClick={(e) => this.handleClick("Open source", e)}>Open source</button>
           <button className="filter-go"> Go </button>
         </div>
+        <p>{this.state.selected}</p>
       </div>
       );
   }
