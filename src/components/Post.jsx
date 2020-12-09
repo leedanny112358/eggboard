@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Delete from "./Delete";
 
 /* IMPORTANT 
 PLEASE ONLY MODIFY THIS COMPONENT IN BRANCH POSTS
@@ -27,11 +28,20 @@ class Post extends Component {
       id: props.id || "no id",
       color: props.color || "no color",
       upvote: props.upvote || 0,
+      deletePopUp: false,
     };
   }
 
+  popUpVisibility = () => {
+    this.setState({
+      deletePopUp: !this.state.deletePopUp,
+    });
+  };
+
   render() {
     return (
+      <div>
+        {this.state.deletePopUp ? <Delete visible={this.popUpVisibility} /> : null}
         <div className="post-grid-container">
           <div className="post-photo" style={{backgroundColor: this.state.color}}>
             <div className="egg"></div>
@@ -79,12 +89,12 @@ class Post extends Component {
                   })
                 }
               />
-            
             </div>
             <div className="post-time"><b>{this.state.time}</b></div>
-            <div className= "post-trash"></div>
+            <button className= "post-trash" onClick={this.popUpVisibility}></button>
           </div>
         </div>
+      </div>
     );
   }
 }
