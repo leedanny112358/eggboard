@@ -13,19 +13,13 @@ class NewPost extends Component {
       tag1: "---",
       tag2: "---",
       tag3: "---",
-<<<<<<< HEAD
-      color: "#b0e2f1", // default color; should never be this color
-=======
       passcode: "",
-      color: "#b0e2f1" // default color; should never be this color
->>>>>>> 84002fd8e6b1b88675769d8ac6e2a12306d2e805
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async handleSubmit(event) {
-<<<<<<< HEAD
     const {
       title,
       manager,
@@ -35,10 +29,8 @@ class NewPost extends Component {
       tag1,
       tag2,
       tag3,
+      passcode,
     } = this.state;
-=======
-    const { title, manager, contact, description, needs, tag1, tag2, tag3, passcode } = this.state;
->>>>>>> 84002fd8e6b1b88675769d8ac6e2a12306d2e805
     if (
       title === "" ||
       manager === "" ||
@@ -47,12 +39,8 @@ class NewPost extends Component {
       needs === "" ||
       tag1 === "---" ||
       tag2 === "---" ||
-<<<<<<< HEAD
-      tag3 === "---"
-=======
-      tag3 === "---"  ||
+      tag3 === "---" ||
       passcode === ""
->>>>>>> 84002fd8e6b1b88675769d8ac6e2a12306d2e805
     ) {
       alert("Please enter all fields!");
       return;
@@ -60,56 +48,24 @@ class NewPost extends Component {
     event.preventDefault();
     let d = new Date();
     let datetime = d.toUTCString();
-    console.log(datetime);
     this.setState({ time: datetime }, () => {
-      console.log(this.state.time);
-      try {
-        fetch("http://localhost:5000/newpost", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(this.state),
+      fetch("http://localhost:5000/newpost", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.state),
+      })
+        .then((res) => {
+          if (res.statusText === "OK") {
+            alert("New post has been created");
+            window.location = "http://localhost:3000/";
+          }
+        })
+        .catch((error) => {
+          alert(`Error: ${error}`);
         });
-        window.location.href = "http://localhost:3000/";
-        alert("Your project was submitted");
-      } catch (error) {
-        console.error("Error:", error);
-      }
     });
-    this.setState({ color: this.randomColor() });
-  }
-
-  randomColor() {
-    let colors = [
-      "#00ecff",
-      "#ff0000",
-      "#ff00e7",
-      "#8900ff",
-      "#0078ff",
-      "#ff9a00",
-      "#17deee",
-      "#ff7f50",
-      "#00ff11",
-      "#ff4162",
-      "#f2e50b",
-      "#21b20c",
-      "#0181bb",
-      "#77dad5",
-      "#ffe877",
-      "#dede0e",
-      "#f96e91",
-      "#232d3b",
-      "#ff005c",
-      "#00b1b9",
-      "#ffa800",
-      "#ffd32a",
-      "#0ce881",
-      "#48d0fa",
-      "#3d40c6",
-      "#ff3f34",
-    ];
-    return colors[Math.floor(Math.random() * colors.length)];
   }
 
   handleChange(event) {
@@ -181,7 +137,6 @@ class NewPost extends Component {
             />
           </div>
           <div className="tags_dropdowns_container">
-<<<<<<< HEAD
             <span className="tags_dropdowns_item">
               Languages&nbsp;
               <select
@@ -210,8 +165,8 @@ class NewPost extends Component {
                 onChange={this.handleChange}
               >
                 <option value="---">---</option>
-                <option value="Back-End">Back-End</option>
-                <option value="Front-End">Front-End</option>
+                <option value="Backend">Backend</option>
+                <option value="Frontend">Frontend</option>
                 <option value="Web Dev">Web Dev</option>
                 <option value="Mobile/iOS">Mobile/iOS</option>
                 <option value="Low-Level">Low-Level</option>
@@ -235,49 +190,11 @@ class NewPost extends Component {
                 <option value="Open-source">Open-source</option>
               </select>
             </span>
-=======
-              <span className="tags_dropdowns_item">
-                Languages&nbsp;
-                <select className="tags_dropdown" name="tag1" value={this.state.tag1} onChange={this.handleChange}>
-                    <option value="---">---</option>
-                    <option value="Java">Java</option>
-                    <option value="Python">Python</option>
-                    <option value="C/C++">C/C++</option>
-                    <option value="HTML/CSS/JavaScript">HTML/CSS/JavaScript</option>
-                    <option value="SQL">SQL</option>
-                    <option value="Swift">Swift</option>
-                    <option value="Objective C">Objective C</option>
-                    <option value="C#">C#</option>
-                </select> 
-              </span>
-              <span className="tags_dropdowns_item">
-                Specification&nbsp;
-                <select className="tags_dropdown" name="tag2" value={this.state.tag2} onChange={this.handleChange}>
-                    <option value="---">---</option>
-                    <option value="Backend">Backend</option>
-                    <option value="Frontend">Frontend</option>
-                    <option value="Web Dev">Web Dev</option>
-                    <option value="Mobile/iOS">Mobile/iOS</option>
-                    <option value="Low-Level">Low-Level</option>
-                    <option value="Software Tools">Software Tools</option>
-                    <option value="Security">Security</option>
-                    <option value="Cloud Computing">Cloud Computing</option>
-                </select>  
-              </span>
-              <span className="tags_dropdowns_item">
-                Category&nbsp;
-                <select className="tags_dropdown" name="tag3" value={this.state.tag3} onChange={this.handleChange}>
-                    <option value="---">---</option>
-                    <option value="Just for fun">Just for fun</option>
-                    <option value="For class">For class</option>
-                    <option value="Start-up">Start-up</option>
-                    <option value="Open-source">Open-source</option>
-                </select>
-              </span>
->>>>>>> 84002fd8e6b1b88675769d8ac6e2a12306d2e805
           </div>
           <div>
-            <label>Four-digit passcode to allow for post deletion and/or editing</label>
+            <label>
+              Four-digit passcode to allow for post deletion and/or editing
+            </label>
             <br />
             <input
               className="form_pass_input"

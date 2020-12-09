@@ -22,67 +22,72 @@ class Post extends Component {
       contact: props.contact || "No contact info",
       description: props.description || "No description provided",
       needs: props.needs || "No needs provided",
-      tags: props.tags || ["tag1", "tag2", "tag3"],
+      color: props.color || "none",
+      tags: [props.tag1, props.tag2, props.tag3] || ["none"],
       time: props.time || "no time",
       id: props.id || "no id",
-      color: props.color || "no color",
       upvote: props.upvote || 0,
     };
   }
 
   render() {
     return (
-        <div className="post-grid-container">
-          <div className="post-photo" style={{backgroundColor: this.state.color}}>
-            <div className="egg"></div>
+      <div className="post-grid-container">
+        <div
+          className="post-photo"
+          style={{ backgroundColor: this.state.color }}
+        >
+          <div className="egg"></div>
+        </div>
+        <div className="post-title">
+          <h2>{this.state.title}</h2>
+        </div>
+        <div className="post-manager-contact">
+          <p>
+            <span className="attribute">Manager:</span> {this.state.manager}
+          </p>
+          <p>
+            <span className="attribute">Contact:</span> {this.state.contact}
+          </p>
+        </div>
+        <div className="post-tags">
+          {this.state.tags.map((tag) => (
+            <div>{tag}</div>
+          ))}
+        </div>
+        <div className="post-description">
+          <p className="attribute">Description:</p>
+          <p>{this.state.description}</p>
+        </div>
+        <div className="post-needs">
+          <p className="attribute">Needs:</p>
+          <p>{this.state.needs}</p>
+        </div>
+        <div id="post-bottom">
+          <div className="post-votes">
+            <div
+              className="vote-arrow-up"
+              onClick={() =>
+                this.setState({
+                  upvote: this.state.upvote + 1,
+                })
+              }
+            />
+            <div className="post-voteNum">{this.state.upvote}</div>
+            <div
+              className="vote-arrow-down"
+              onClick={() =>
+                this.setState({
+                  upvote: this.state.upvote - 1,
+                })
+              }
+            />
           </div>
-          <div className="post-title">
-            <h2>{this.state.title}</h2>
-          </div>
-          <div className="post-manager-contact">
-            <p>
-              <span className="attribute">Manager:</span> {this.state.manager}
-            </p>
-            <p>
-              <span className="attribute">Contact:</span> {this.state.contact}
-            </p>
-          </div>
-          <div className="post-tags">
-            {this.state.tags.map((tag) => (
-              <div>{tag}</div>
-            ))}
-          </div>
-          <div className="post-description">
-            <p className="attribute">Description:</p>
-            <p>{this.state.description}</p>
-          </div>
-          <div className="post-needs">
-            <p className="attribute">Needs:</p>
-            <p>{this.state.needs}</p>
-          </div>
-          <div id="post-bottom">
-            <div className="post-votes">
-              <div
-                className="vote-arrow-up"
-                onClick={() =>
-                  this.setState({
-                    upvote: this.state.upvote + 1,
-                  })
-                }
-              />
-              <div className="post-voteNum">{this.state.upvote}</div>
-              <div
-                className="vote-arrow-down"
-                onClick={() =>
-                  this.setState({
-                    upvote: this.state.upvote - 1,
-                  })
-                }
-              />
-            </div>
-            <div className="post-time"><b>{this.state.time}</b></div>
+          <div className="post-time">
+            <b>{this.state.time}</b>
           </div>
         </div>
+      </div>
     );
   }
 }
