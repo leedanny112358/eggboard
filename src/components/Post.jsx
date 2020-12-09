@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Delete from "./Delete";
 
 /* IMPORTANT 
 PLEASE ONLY MODIFY THIS COMPONENT IN BRANCH POSTS
@@ -27,8 +28,15 @@ class Post extends Component {
       time: props.time || "no time",
       id: props.id || "no id",
       upvote: props.upvote || 0,
+      deletePopUp: false,
     };
   }
+
+  popUpVisibility = () => {
+    this.setState({
+      deletePopUp: !this.state.deletePopUp,
+    });
+  };
 
   render() {
     return (
