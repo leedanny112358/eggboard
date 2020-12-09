@@ -43,6 +43,7 @@ button {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
+  border-radius: 23px;
   background: #ebf38f;
   color: #7eb6c7;
   font-family: sans-serif;
@@ -235,7 +236,16 @@ button:active {
   margin-inline-start: 20px;
   margin-inline-end: 20px;
 }
-
+.post-trash{
+  background-image: url(./assets/trashcan.png);
+  background-repeat: no-repeat;
+  border-color: darkmagenta;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid gray;
+  width: 20px;
+  height: 20px;
+}
 .attribute {
   margin-bottom: 0px;
   font-weight: bold;

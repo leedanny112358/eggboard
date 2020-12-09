@@ -79,8 +79,10 @@ class Post extends Component {
                   })
                 }
               />
+            
             </div>
             <div className="post-time"><b>{this.state.time}</b></div>
+            <div className= "post-trash"></div>
           </div>
         </div>
     );
