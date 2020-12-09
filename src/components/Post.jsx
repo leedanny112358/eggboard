@@ -31,6 +31,8 @@ class Post extends Component {
 
   render() {
     return (
+      <div>
+      {this.state.deletePopUp ? <Delete visible={this.popUpVisibility} /> : null}
       <div className="post-grid-container">
         <div
           className="post-photo"
@@ -85,7 +87,9 @@ class Post extends Component {
           <div className="post-time">
             <b>{this.state.time}</b>
           </div>
+          <button className= "post-trash" onClick={this.popUpVisibility}> </button>
         </div>
+      </div>
       </div>
     );
   }
