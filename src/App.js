@@ -5,6 +5,15 @@ import Results from "./components/Results.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+function display() {
+  let x = document.getElementById("filters");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -15,19 +24,14 @@ function App() {
             <NewPost />
           </Route>
           <Route path="/">
-            <button
-              onClick={() => {
-                let x = document.getElementById("filters");
-                if (x.style.display === "block") {
-                  x.style.display = "none";
-                } else {
-                  x.style.display = "block";
-                }
-              }}
-            > Filters
-            </button>
-            <Filter />
-            <Results />
+            <div className="container">
+              <button onClick={() => display()} className="filter-button">
+                {" "}
+                Filters
+              </button>
+              <Filter />
+              <Results />
+            </div>
           </Route>
         </Switch>
       </Router>

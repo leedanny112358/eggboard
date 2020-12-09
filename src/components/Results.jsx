@@ -8,7 +8,7 @@ class Results extends Component {
 
   render() {
     return (
-      <div className="PostContainer">
+      <div>
         {this.state.posts.map((post) => (
           <Post
             title={post.title}

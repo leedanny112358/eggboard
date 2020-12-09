@@ -20,16 +20,12 @@ body {
 
 .container {
   width: 70%;
-  height: 300px;
   margin: 0 auto;
-  background-color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 23px;
 }
 
 #filters {
   display: none;
-  width: 70%;
+  width: 100%;
   height: 475px;
   margin: 0 auto;
   background-color: white;
@@ -37,35 +33,16 @@ body {
   border-radius: 23px;
 }
 
-button {
-  display: inline-block;
-  border: none;
-  padding: 1rem 2rem;
-  margin: 0;
+.filter-button {
   text-decoration: none;
-  border-radius: 23px;
   background: #ebf38f;
   color: #7eb6c7;
-  font-family: sans-serif;
   font-size: 1rem;
+  margin-bottom: 10px;
+  border-radius: 23px;
+  padding: 1rem 2rem;
   cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
-}
-
-button:hover,
-button:focus {
-  background: #ebf38f;
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-button:active {
-  transform: scale(0.99);
+  border: none;
 }
 
 .new-project-button {
@@ -95,8 +72,6 @@ button:active {
   background-color: white;
   margin-top: 10px;
   margin-bottom: 0px;
-  margin-left: 200px;
-  margin-right: 200px;
   padding: 10px;
   align-items: stretch;
 }
@@ -168,7 +143,7 @@ button:active {
 
 #post-bottom {
   display: flex;
-  align-items: stretch; 
+  align-items: stretch;
   grid-column: 1 / span 3;
   background-color: white;
 }
@@ -236,7 +211,7 @@ button:active {
   margin-inline-start: 20px;
   margin-inline-end: 20px;
 }
-.post-trash{
+.post-trash {
   background-image: url(./assets/trashcan.png);
   background-repeat: no-repeat;
   border-color: darkmagenta;
@@ -301,7 +276,7 @@ button:active {
 }
 
 form > div {
-  margin: 10px; 
+  margin: 10px;
   padding: 10px;
 }
 
@@ -326,7 +301,7 @@ form > div {
   text-align: center;
 }
 
-.tags_dropdowns_container{
+.tags_dropdowns_container {
   display: flex;
 }
 
@@ -335,7 +310,7 @@ form > div {
 }
 
 .tags_dropdown {
-  width:150px;
+  width: 150px;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 25px;
@@ -360,6 +335,10 @@ form > div {
 
 /* Filter.css */
 
+button {
+  transition: background 250ms ease-in-out, transform 150ms ease;
+}
+
 .filter-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -375,7 +354,7 @@ form > div {
 }
 
 .filter-grid-item-lang {
-  background-color: #FFDBDB;
+  background-color: #ffdbdb;
   border: 1px solid black;
   text-align: center;
   padding: 10px;
@@ -387,12 +366,8 @@ form > div {
   background-color: #f5a6a6;
 }
 
-.filter-grid-item-lang:visited {
-  background-color: #f5a6a6;
-}
-
 .filter-grid-item-spec {
-  background-color: #E3E3FF;
+  background-color: #e3e3ff;
   border: 1px solid black;
   text-align: center;
   padding: 10px;
@@ -405,7 +380,7 @@ form > div {
 }
 
 .filter-grid-item-cat {
-  background-color: #E2FCE6;
+  background-color: #e2fce6;
   border: 1px solid black;
   text-align: center;
   padding: 10px;
