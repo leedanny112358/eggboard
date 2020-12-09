@@ -32,64 +32,68 @@ class Post extends Component {
   render() {
     return (
       <div>
-      {this.state.deletePopUp ? <Delete visible={this.popUpVisibility} /> : null}
-      <div className="post-grid-container">
-        <div
-          className="post-photo"
-          style={{ backgroundColor: this.state.color }}
-        >
-          <div className="egg"></div>
-        </div>
-        <div className="post-title">
-          <h2>{this.state.title}</h2>
-        </div>
-        <div className="post-manager-contact">
-          <p>
-            <span className="attribute">Manager:</span> {this.state.manager}
-          </p>
-          <p>
-            <span className="attribute">Contact:</span> {this.state.contact}
-          </p>
-        </div>
-        <div className="post-tags">
-          {this.state.tags.map((tag) => (
-            <div>{tag}</div>
-          ))}
-        </div>
-        <div className="post-description">
-          <p className="attribute">Description:</p>
-          <p>{this.state.description}</p>
-        </div>
-        <div className="post-needs">
-          <p className="attribute">Needs:</p>
-          <p>{this.state.needs}</p>
-        </div>
-        <div id="post-bottom">
-          <div className="post-votes">
-            <div
-              className="vote-arrow-up"
-              onClick={() =>
-                this.setState({
-                  upvote: this.state.upvote + 1,
-                })
-              }
-            />
-            <div className="post-voteNum">{this.state.upvote}</div>
-            <div
-              className="vote-arrow-down"
-              onClick={() =>
-                this.setState({
-                  upvote: this.state.upvote - 1,
-                })
-              }
-            />
+        {this.state.deletePopUp ? (
+          <Delete visible={this.popUpVisibility} id={this.state.id} />
+        ) : null}
+        <div className="post-grid-container">
+          <div
+            className="post-photo"
+            style={{ backgroundColor: this.state.color }}
+          >
+            <div className="egg"></div>
           </div>
-          <div className="post-time">
-            <b>{this.state.time}</b>
+          <div className="post-title">
+            <h2>{this.state.title}</h2>
           </div>
-          <button className= "post-trash" onClick={this.popUpVisibility}> </button>
+          <div className="post-manager-contact">
+            <p>
+              <span className="attribute">Manager:</span> {this.state.manager}
+            </p>
+            <p>
+              <span className="attribute">Contact:</span> {this.state.contact}
+            </p>
+          </div>
+          <div className="post-tags">
+            {this.state.tags.map((tag) => (
+              <div>{tag}</div>
+            ))}
+          </div>
+          <div className="post-description">
+            <p className="attribute">Description:</p>
+            <p>{this.state.description}</p>
+          </div>
+          <div className="post-needs">
+            <p className="attribute">Needs:</p>
+            <p>{this.state.needs}</p>
+          </div>
+          <div id="post-bottom">
+            <div className="post-votes">
+              <div
+                className="vote-arrow-up"
+                onClick={() =>
+                  this.setState({
+                    upvote: this.state.upvote + 1,
+                  })
+                }
+              />
+              <div className="post-voteNum">{this.state.upvote}</div>
+              <div
+                className="vote-arrow-down"
+                onClick={() =>
+                  this.setState({
+                    upvote: this.state.upvote - 1,
+                  })
+                }
+              />
+            </div>
+            <div className="post-time">
+              <b>{this.state.time}</b>
+            </div>
+            <button className="post-trash" onClick={this.popUpVisibility}>
+              {" "}
+            </button>
+          </div>
         </div>
-      </div>
       </div>
     );
   }

@@ -20,7 +20,19 @@ export default class Delete extends Component {
     });
   }
 
-  handleSubmit(event) {}
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch(
+      `http://localhost:5000/deletepost/${this.props.id}/${this.state.inputPass}`
+    ).then((res) => {
+      if (res.statusText === "OK") {
+        alert("Post Deleted");
+        window.location = "http://localhost:3000/";
+      } else {
+        alert("Wrong Password");
+      }
+    });
+  }
 
   render() {
     return (
@@ -29,7 +41,7 @@ export default class Delete extends Component {
           <span className="pop-up-exit" onClick={this.handleClick}>
             &times;
           </span>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <h3>Delete selected post</h3>
             <label>
               Post-specific passcode:
