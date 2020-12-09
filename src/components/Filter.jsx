@@ -4,7 +4,6 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //selected: Array(),
       tag1: null,
       tag2: null,
       tag3: null,
@@ -43,18 +42,21 @@ class Filter extends Component {
       });
     }
   }
-  // handleClick(tag) {
-  //   var current = this.state.selected;
-  //   let index = current.indexOf(tag + ', ');
-  //   if (index === -1) {
-  //     current.push(tag + ', ');
-  //   } else {
-  //     current.splice(index, 1);
-  //   }
-  //   this.setState({
-  //     selected: current,
-  //   });
-  // }
+
+  handleClickGo(e) {
+    e.preventDefault();
+    var tag1 = this.state.tag1;
+    var tag2 = this.state.tag2;
+    var tag3 = this.state.tag3;
+    // note that no tag options for tag1 contain spaces
+    tag2 = tag2.replace(/ /g, '%20');
+    tag3 = tag3.replace(/ /g, '%20');
+    var query = "tag1=" + tag1 + "&tag2=" + tag2 + "&tag3=" + tag3;
+    fetch(`http://localhost:5000/filter?${query}`)
+      // TO DO
+      .then((res) =>)
+
+  }
 
   render() {
     var selected = null;
