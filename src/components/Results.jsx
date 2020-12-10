@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import Post from "./Post.jsx";
+import Filter from "./Filter.jsx";
 
 class Results extends Component {
   state = {
     posts: [],
   };
 
+  display() {
+    let x = document.getElementById("filters");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
   render() {
     return (
       <div>
+        <button onClick={() => this.display()} className="filter-button">
+          {" "}
+          Filters
+        </button>
+        <Filter />
         {this.state.posts.map((post) => (
           <Post
             title={post.title}
@@ -61,9 +76,15 @@ class Results extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/posts")
-      .then((response) => response.json())
-      .then((data) => this.setState({ posts: data }));
+    if (window.location.search !== "") {
+      fetch(`http://localhost:5000/filter${window.location.search}`)
+        .then((response) => response.json())
+        .then((data) => this.setState({ posts: data }));
+    } else {
+      fetch("http://localhost:5000/posts")
+        .then((response) => response.json())
+        .then((data) => this.setState({ posts: data }));
+    }
   }
 }
 

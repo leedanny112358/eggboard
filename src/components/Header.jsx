@@ -6,9 +6,9 @@ class Header extends Component {
   render() {
     return (
       <nav className="header">
-        <Link to="/" className="logo">
+        <a href="/" className="logo">
           <span style={{ color: "#EBF38F" }}>egg</span>board
-        </Link>
+        </a>
         <Link to="/newpost">
           <button className="new-project-button">+ New Project</button>
         </Link>
