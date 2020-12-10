@@ -90,7 +90,12 @@ class NewPost extends Component {
   render() {
     return (
       <div className="centered-form">
-        <h1>New Project Post</h1>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className="hatchegg">
+            </div>
+            </div>
+        <h1>New Project Post 
+          </h1>
         <p>
           <b>Instructions:</b> Please fill out all of the following fields to
           create a new project post. In particular, please select 1 of each tag.

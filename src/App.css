@@ -270,6 +270,18 @@ body {
   background-color: white;
 }
 
+.hatchegg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/hatchegg.png);
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+}
 /* NewPost.css */
 .centered-form {
   display: block;
