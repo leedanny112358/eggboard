@@ -36,6 +36,11 @@ class NewPost extends Component {
       tag3,
       passcode,
     } = this.state;
+    if (passcode.length !== 4) {
+      alert("Please enter a valid 4-digit passcode");
+      event.preventDefault();
+      return;
+    }
     if (
       title === "" ||
       manager === "" ||
@@ -48,6 +53,7 @@ class NewPost extends Component {
       passcode === ""
     ) {
       alert("Please enter all fields!");
+      event.preventDefault();
       return;
     }
     event.preventDefault();
