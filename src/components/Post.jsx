@@ -5,6 +5,8 @@ import Delete from "./Delete";
 PLEASE ONLY MODIFY THIS COMPONENT IN BRANCH POSTS
 */
 
+// post component used for each post, displays title, manager, description, needs, tags, and time from user input
+// also displays a randomly generated color, an upvote/downvote counter, and a delete button
 class Post extends Component {
   constructor(props) {
     super(props);
@@ -23,15 +25,18 @@ class Post extends Component {
     };
   }
 
+  // if delete button is clicked, the delete pop up will become visible
   popUpVisibility = () => {
     this.setState({
       deletePopUp: !this.state.deletePopUp,
     });
   };
 
+  // renders each post and associated fields
   render() {
     return (
       <div>
+        {/* if delete popup is supposed to be seen, div becomes visible */}
         {this.state.deletePopUp ? (
           <Delete visible={this.popUpVisibility} id={this.state.id} />
         ) : null}

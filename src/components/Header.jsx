@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
+// header component for eggboard logo and new post button
 class Header extends Component {
   state = {};
   render() {
