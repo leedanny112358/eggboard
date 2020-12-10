@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// component for fltering
 class Filter extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +10,7 @@ class Filter extends Component {
       tag3: null,
     };
   }
+  // click handlers for all three types of buttons
   handleClickLang(tag) {
     if (tag === this.state.tag1) {
       this.setState({
@@ -43,6 +45,7 @@ class Filter extends Component {
     }
   }
 
+  // handle click for Go button that will then be used for get request
   handleClickGo() {
     var tag1 = this.state.tag1 || "none";
     var tag2 = this.state.tag2 || "none";
@@ -55,6 +58,7 @@ class Filter extends Component {
     window.location = "http://localhost:3000/?" + query;
   }
 
+  // renders the three grids of button, along with a line detailing which tags have been selected
   render() {
     var selected = null;
     var output = null;
@@ -83,7 +87,6 @@ class Filter extends Component {
     return (
       <div id="filters">
         <div className="filter-label">Languages </div>
-        {/* <div className="filter-selected">Selected: {this.state.tag1}</div> */}
         <div className="filter-grid-container">
           <button
             className="filter-grid-item-lang"
@@ -135,7 +138,6 @@ class Filter extends Component {
           </button>
         </div>
         <div className="filter-label">Specification</div>
-        {/* <div className="filter-selected">Selected: {this.state.tag2}</div> */}
         <div className="filter-grid-container">
           <button
             className="filter-grid-item-spec"
@@ -187,7 +189,6 @@ class Filter extends Component {
           </button>
         </div>
         <div className="filter-label">Category</div>
-        {/* <div className="filter-selected">Selected: {this.state.tag3}</div> */}
         <div className="filter-grid-container">
           <button
             className="filter-grid-item-cat"

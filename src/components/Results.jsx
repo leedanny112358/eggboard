@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Post from "./Post.jsx";
 import Filter from "./Filter.jsx";
 
+// renders the posts on the homepage
 class Results extends Component {
   state = {
     posts: [],
@@ -43,6 +44,7 @@ class Results extends Component {
     );
   }
 
+  // randomize colors of eggs
   randomColor() {
     let colors = [
       "#ffcccc",
@@ -75,6 +77,7 @@ class Results extends Component {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
+  // renders either all posts or filtered posts
   componentDidMount() {
     if (window.location.search !== "") {
       fetch(`http://localhost:5000/filter${window.location.search}`)
