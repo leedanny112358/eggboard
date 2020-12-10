@@ -24,7 +24,7 @@ class Results extends Component {
           Filters
         </button>
         <Filter />
-        {this.state.posts.map((post) => (
+        {this.state.posts.reverse().map((post) => (
           <Post
             title={post.title}
             manager={post.manager}
