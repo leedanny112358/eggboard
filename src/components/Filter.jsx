@@ -54,7 +54,6 @@ class Filter extends Component {
     tag2 = tag2.replace(/ /g, "%20");
     tag3 = tag3.replace(/ /g, "%20");
     var query = "tag1=" + tag1 + "&tag2=" + tag2 + "&tag3=" + tag3;
-    console.log("ree");
     window.location = "http://localhost:3000/?" + query;
   }
 
