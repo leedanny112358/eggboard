@@ -209,9 +209,7 @@ class NewPost extends Component {
             </span>
           </div>
           <div>
-            <label>
-              Four-digit passcode to allow for post deletion and/or editing
-            </label>
+            <label>Four-digit passcode to allow for post deletion.</label>
             <br />
             <input
               className="form_pass_input"
