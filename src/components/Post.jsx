@@ -97,6 +97,9 @@ class Post extends Component {
             <button className="post-trash" onClick={this.popUpVisibility}>
               {" "}
             </button>
+            <a className="apply" href={"mailto:" + this.props.contact}>
+              Apply
+            </a>
           </div>
         </div>
       </div>

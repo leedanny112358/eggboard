@@ -225,6 +225,13 @@ body {
   cursor: pointer;
 }
 
+.apply {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #7eb6c7;
+  align-items: center;
+}
+
 /* Delete.css */
 .pop-up {
   position: absolute;
