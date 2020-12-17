@@ -54,7 +54,6 @@ export default class Delete extends Component {
                 type="password"
                 id="passcode"
                 name="passcode"
-                placeholder="1234"
                 value={this.state.inputPass}
                 onChange={this.handleChange}
               />

@@ -63,7 +63,6 @@ body {
   cursor: pointer;
 }
 
-
 /* Post.css */
 .post-grid-container {
   display: grid;
@@ -223,16 +222,17 @@ body {
   background-color: white;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 /* Delete.css */
 .pop-up {
   position: absolute;
   z-index: 1;
-  width: 69.2%;
-  height: 72%;
+  width: 69.3%;
+  height: 47.2%;
   background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 22px;
+  border-radius: 25px;
 }
 
 .pop-up-content {
@@ -244,7 +244,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   border: 5px solid#ebf38f;
-  
 }
 
 .pop-up-exit {
@@ -270,7 +269,7 @@ body {
   background-color: white;
 }
 
-.hatchegg{
+.hatchegg {
   display: flex;
   justify-content: center;
   align-items: center;
