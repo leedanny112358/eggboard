@@ -16,4 +16,4 @@ This project uses the Node.js environment to run our application using React and
 
 ### 'npm run dev'
 
-Afterwards, open [http://localhost:3000](http://localhost:3000) to view eggboard in the browser. The backend MySQL databse resides on the cloud via heroku.
+Afterwards, open [http://localhost:3000](http://localhost:3000) to view eggboard in the browser. The backend MySQL database resides on the cloud via heroku.
